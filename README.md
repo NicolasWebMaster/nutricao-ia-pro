@@ -27,19 +27,6 @@ Criar um chatbot especializado em nutrição clínica, esportiva e saúde públi
 * Groq API
 * Llama 3.3 70B Versatile
 
-## Processamento Semântico
-
-* HuggingFace Embeddings
-* all-mpnet-base-v2
-
-## Vetorização e Busca
-
-* FAISS Vector Store
-
-## Processamento de Texto
-
-* RecursiveCharacterTextSplitter
-
 ## Fontes Científicas
 
 * OMS (WHO)
@@ -48,58 +35,6 @@ Criar um chatbot especializado em nutrição clínica, esportiva e saúde públi
 * NIH
 * CDC
 * Harvard Nutrition Source
-
----
-
-# 🏗 Arquitetura da Solução
-
-O sistema utiliza arquitetura RAG (Retrieval-Augmented Generation).
-
-Fluxo da aplicação:
-
-1. O usuário envia uma pergunta.
-2. O sistema realiza busca semântica na base vetorial.
-3. Os documentos mais relevantes são recuperados.
-4. O contexto científico é enviado ao modelo LLM.
-5. O modelo gera uma resposta baseada apenas nas evidências encontradas.
-
-Isso reduz significativamente:
-
-* alucinações;
-* respostas genéricas;
-* informações sem fundamento científico.
-
----
-
-# 🔍 Como Funciona
-
-## 1. Coleta de Dados
-
-O sistema carrega conteúdos científicos de sites oficiais utilizando WebBaseLoader.
-
-## 2. Chunking
-
-Os documentos são divididos em blocos menores para melhorar recuperação contextual.
-
-## 3. Embeddings
-
-Os textos são convertidos em vetores semânticos utilizando sentence-transformers.
-
-## 4. Vetorização
-
-Os embeddings são armazenados utilizando FAISS.
-
-## 5. Retrieval
-
-Quando o usuário faz uma pergunta, o sistema encontra os trechos semanticamente mais relevantes.
-
-## 6. Geração de Resposta
-
-O modelo LLM utiliza:
-
-* histórico da conversa;
-* contexto recuperado;
-* prompt especializado.
 
 ---
 
