@@ -208,6 +208,89 @@ As chaves de API são armazenadas em variáveis de ambiente utilizando `.env`, e
 
 ---
 
+# ▶️ Como Executar o Projeto
+
+## 1. Clone o repositório
+
+git clone https://github.com/seuusuario/nutricao-ia-pro.git
+
+## 2. Acesse a pasta do projeto
+
+cd nutricao-ia-pro
+
+3. Crie um ambiente virtual
+
+Windows
+python -m venv venv
+venv\Scripts\activate
+Linux/Mac
+python3 -m venv venv
+source venv/bin/activate
+
+4. Instale as dependências
+
+pip install -r requirements.txt
+
+# 🔑 Como Criar a Chave da API Groq
+
+1. Acesse o site oficial
+
+https://console.groq.com/
+
+2. Crie uma conta
+
+Você pode criar conta usando:
+
+Google
+GitHub
+E-mail
+
+3. Vá até “API Keys”
+
+Após fazer login:
+
+clique no menu lateral;
+acesse:
+API Keys
+
+4. Gere uma nova chave
+
+Clique em:
+
+Create API Key
+
+Copie a chave gerada.
+
+Exemplo:
+
+gsk_xxxxxxxxxxxxxxxxx
+
+# ⚙️ Configuração da API
+
+Crie um arquivo .env
+
+Na raiz do projeto:
+
+GROQ_API_KEY=sua_chave_aqui
+
+Exemplo:
+
+GROQ_API_KEY=gsk_xxxxxxxxxxxxxxxxx
+🚀 Executando o Projeto
+
+Execute:
+
+python app/main.py
+
+Se tudo estiver correto, aparecerá:
+
+🥗 NUTRIÇÃO IA PRO
+Digite 'sair' para encerrar
+
+Agora basta fazer perguntas normalmente no terminal.
+
+--
+
 # 👨‍💻 Autor
 
 Nicolas Ribeiro
