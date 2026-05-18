@@ -208,87 +208,377 @@ As chaves de API são armazenadas em variáveis de ambiente utilizando `.env`, e
 
 ---
 
-# ▶️ Como Executar o Projeto
+# ⚙️ Instalação e Configuração
 
-## 1. Clone o repositório
+Este projeto funciona em:
 
+- Windows
+- Linux
+- macOS
+
+Antes de começar, você precisa ter instalado:
+
+- Python 3.10 ou superior
+- Git
+- Uma conta na Groq Cloud
+
+---
+
+# 🐍 1. Instalando o Python
+
+## Windows
+
+1. Acesse:
+https://www.python.org/downloads/
+
+2. Baixe a versão mais recente do Python.
+
+3. Durante a instalação:
+   marque a opção:
+
+```text
+Add Python to PATH
+```
+
+4. Clique em:
+```text
+Install Now
+```
+
+5. Após instalar, abra o terminal e teste:
+
+```bash
+python --version
+```
+
+---
+
+## Linux
+
+Ubuntu/Debian:
+
+```bash
+sudo apt update
+sudo apt install python3 python3-pip python3-venv
+```
+
+Teste:
+
+```bash
+python3 --version
+```
+
+---
+
+## macOS
+
+Instale usando Homebrew:
+
+```bash
+brew install python
+```
+
+Teste:
+
+```bash
+python3 --version
+```
+
+---
+
+# 🔧 2. Instalando o Git
+
+## Windows
+
+Baixe:
+https://git-scm.com/download/win
+
+Instale normalmente.
+
+Teste:
+
+```bash
+git --version
+```
+
+---
+
+## Linux
+
+```bash
+sudo apt install git
+```
+
+---
+
+## macOS
+
+```bash
+brew install git
+```
+
+---
+
+# 📥 3. Clonando o Projeto
+
+Abra o terminal e execute:
+
+```bash
 git clone https://github.com/seuusuario/nutricao-ia-pro.git
+```
 
-## 2. Acesse a pasta do projeto
+Depois entre na pasta:
 
+```bash
 cd nutricao-ia-pro
+```
 
-3. Crie um ambiente virtual
+---
 
-Windows
+# 🧪 4. Criando Ambiente Virtual
+
+Ambientes virtuais evitam conflitos entre bibliotecas Python.
+
+---
+
+## Windows
+
+```bash
 python -m venv venv
 venv\Scripts\activate
-Linux/Mac
+```
+
+---
+
+## Linux/macOS
+
+```bash
 python3 -m venv venv
 source venv/bin/activate
+```
 
-4. Instale as dependências
+Se o ambiente estiver ativo, aparecerá algo assim no terminal:
 
-pip install -r requirements.txt
+```text
+(venv)
+```
 
-# 🔑 Como Criar a Chave da API Groq
+---
 
-1. Acesse o site oficial
-
-https://console.groq.com/
-
-2. Crie uma conta
-
-Você pode criar conta usando:
-
-Google
-GitHub
-E-mail
-
-3. Vá até “API Keys”
-
-Após fazer login:
-
-clique no menu lateral;
-acesse:
-API Keys
-
-4. Gere uma nova chave
-
-Clique em:
-
-Create API Key
-
-Copie a chave gerada.
-
-Exemplo:
-
-gsk_xxxxxxxxxxxxxxxxx
-
-# ⚙️ Configuração da API
-
-Crie um arquivo .env
-
-Na raiz do projeto:
-
-GROQ_API_KEY=sua_chave_aqui
-
-Exemplo:
-
-GROQ_API_KEY=gsk_xxxxxxxxxxxxxxxxx
-🚀 Executando o Projeto
+# 📦 5. Instalando Dependências
 
 Execute:
 
+```bash
+pip install -r requirements.txt
+```
+
+Isso instalará:
+- LangChain
+- FAISS
+- HuggingFace
+- Groq SDK
+- Embeddings
+- Bibliotecas auxiliares
+
+---
+
+# 🔑 6. Criando a Chave da API Groq
+
+O projeto utiliza modelos de IA da Groq.
+
+---
+
+## Passo 1: Acesse o site oficial
+
+https://console.groq.com/
+
+---
+
+## Passo 2: Criar conta
+
+Você pode criar conta usando:
+
+- Google
+- GitHub
+- E-mail
+
+Clique em:
+
+```text
+Sign Up
+```
+
+---
+
+## Passo 3: Fazer login
+
+Após criar a conta:
+
+1. Faça login.
+2. Você será redirecionado ao painel da Groq Cloud.
+
+---
+
+## Passo 4: Abrir menu de API Keys
+
+No menu lateral esquerdo:
+
+```text
+API Keys
+```
+
+Clique nessa opção.
+
+---
+
+## Passo 5: Criar nova chave
+
+Clique em:
+
+```text
+Create API Key
+```
+
+Digite um nome para sua chave.
+
+Exemplo:
+
+```text
+nutricao-ia-pro
+```
+
+Clique em:
+
+```text
+Create
+```
+
+---
+
+## Passo 6: Copiar a chave
+
+A Groq mostrará uma chave parecida com:
+
+```text
+gsk_xxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+Copie essa chave.
+
+⚠️ Importante:
+Nunca compartilhe sua chave publicamente.
+
+---
+
+# 🔐 7. Configurando a API no Projeto
+
+Na raiz do projeto, crie um arquivo chamado:
+
+```text
+.env
+```
+
+Dentro dele coloque:
+
+```env
+GROQ_API_KEY=sua_chave_aqui
+```
+
+Exemplo:
+
+```env
+GROQ_API_KEY=gsk_xxxxxxxxxxxxxxxxx
+```
+
+---
+
+# ▶️ 8. Executando o Projeto
+
+Agora execute:
+
+## Windows
+
+```bash
 python app/main.py
+```
 
-Se tudo estiver correto, aparecerá:
+---
 
+## Linux/macOS
+
+```bash
+python3 app/main.py
+```
+
+---
+
+# ✅ Resultado Esperado
+
+Se tudo estiver funcionando corretamente, aparecerá:
+
+```text
+======================================================================
 🥗 NUTRIÇÃO IA PRO
 Digite 'sair' para encerrar
+======================================================================
+```
 
 Agora basta fazer perguntas normalmente no terminal.
 
+Exemplo:
+
+```text
+O que ajuda no emagrecimento saudável?
+```
+
+---
+
+# 🛑 Como Encerrar
+
+Digite:
+
+```text
+sair
+```
+
+---
+
+# ⚠️ Possíveis Erros
+
+## Erro: Python não encontrado
+
+Instale o Python corretamente e reinicie o terminal.
+
+---
+
+## Erro: pip não reconhecido
+
+Use:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+---
+
+## Erro: API Key inválida
+
+Verifique:
+- se a chave foi copiada corretamente;
+- se o arquivo `.env` está na raiz do projeto;
+- se não existem espaços extras.
+
+---
+
+# 📌 Observações
+
+O primeiro carregamento pode demorar alguns segundos, pois:
+- os documentos científicos são processados;
+- os embeddings são gerados;
+- a base vetorial é criada.
+
+Após isso, o chatbot estará pronto para responder perguntas com base em evidências científicas.
 --
 
 # 👨‍💻 Autor
