@@ -116,311 +116,92 @@ O modelo LLM utiliza:
 
 ---
 
-# ⚙️ Instalação
+# ⚙️ Executando o Projeto no Google Colab
 
-## Clone o repositório
-
-```bash
-git clone https://github.com/seuusuario/nutricao-ia-pro.git
-```
-
-## Acesse a pasta
-
-```bash
-cd nutricao-ia-pro
-```
-
-## Instale as dependências
-
-```bash
-pip install -r requirements.txt
-```
-
-## Configure a variável de ambiente
-
-Crie um arquivo `.env`
-
-```env
-GROQ_API_KEY=sua_chave
-```
-
-## Execute o projeto
-
-```bash
-python app.py
-```
+Você pode executar o projeto diretamente pelo Google Colab, sem instalar nada no computador.
 
 ---
 
-# 📁 Estrutura do Projeto
+# 🚀 1. Abrir o Google Colab
 
-```bash
-nutricao-ia-pro/
-│
-├── app.py
-├── requirements.txt
-├── README.md
-├── .env
-├── prompts/
-├── data/
-└── docs/
-```
+Acesse:
+
+https://colab.research.google.com/
+
+Faça login com sua conta Google.
 
 ---
 
-# ⚠️ Desafios Superados
+# 📄 2. Criar um Novo Notebook
 
-Durante o desenvolvimento, os principais desafios foram:
-
-* reduzir alucinações do modelo;
-* melhorar relevância contextual;
-* selecionar fontes científicas confiáveis;
-* otimizar recuperação semântica;
-* estruturar memória conversacional;
-* equilibrar performance e precisão.
-
-A solução foi utilizar:
-
-* embeddings semânticos;
-* retrieval vetorial;
-* engenharia de prompts;
-* arquitetura RAG.
-
----
-
-# 🔒 Segurança
-
-As chaves de API são armazenadas em variáveis de ambiente utilizando `.env`, evitando exposição sensível no código-fonte.
-
----
-
-# 📈 Melhorias Futuras
-
-* Interface Web com Streamlit ou Next.js
-* Banco vetorial persistente
-* Upload de PDFs científicos
-* Sistema multiusuário
-* Dashboard analítico
-* API REST
-* Deploy em nuvem
-* Avaliação automática de respostas
-* Sistema de citações científicas
-
----
-
-# ⚙️ Instalação e Configuração
-
-Este projeto funciona em:
-
-- Windows
-- Linux
-- macOS
-
-Antes de começar, você precisa ter instalado:
-
-- Python 3.10 ou superior
-- Git
-- Uma conta na Groq Cloud
-
----
-
-# 🐍 1. Instalando o Python
-
-## Windows
-
-1. Acesse:
-https://www.python.org/downloads/
-
-2. Baixe a versão mais recente do Python.
-
-3. Durante a instalação:
-   marque a opção:
+Clique em:
 
 ```text
-Add Python to PATH
+Novo notebook
 ```
 
-4. Clique em:
-```text
-Install Now
-```
-
-5. Após instalar, abra o terminal e teste:
-
-```bash
-python --version
-```
-
----
-
-## Linux
-
-Ubuntu/Debian:
-
-```bash
-sudo apt update
-sudo apt install python3 python3-pip python3-venv
-```
-
-Teste:
-
-```bash
-python3 --version
-```
-
----
-
-## macOS
-
-Instale usando Homebrew:
-
-```bash
-brew install python
-```
-
-Teste:
-
-```bash
-python3 --version
-```
-
----
-
-# 🔧 2. Instalando o Git
-
-## Windows
-
-Baixe:
-https://git-scm.com/download/win
-
-Instale normalmente.
-
-Teste:
-
-```bash
-git --version
-```
-
----
-
-## Linux
-
-```bash
-sudo apt install git
-```
-
----
-
-## macOS
-
-```bash
-brew install git
-```
-
----
-
-# 📥 3. Clonando o Projeto
-
-Abra o terminal e execute:
-
-```bash
-git clone https://github.com/seuusuario/nutricao-ia-pro.git
-```
-
-Depois entre na pasta:
-
-```bash
-cd nutricao-ia-pro
-```
-
----
-
-# 🧪 4. Criando Ambiente Virtual
-
-Ambientes virtuais evitam conflitos entre bibliotecas Python.
-
----
-
-## Windows
-
-```bash
-python -m venv venv
-venv\Scripts\activate
-```
-
----
-
-## Linux/macOS
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-Se o ambiente estiver ativo, aparecerá algo assim no terminal:
+ou
 
 ```text
-(venv)
+New Notebook
 ```
 
 ---
 
-# 📦 5. Instalando Dependências
+# 📦 3. Instalar as Bibliotecas
 
-Execute:
+Na primeira célula do Colab, cole:
 
-```bash
-pip install -r requirements.txt
+```python
+!pip install -q \
+langchain \
+langchain-community \
+langchain-core \
+langchain-groq \
+langchain-huggingface \
+langchain-text-splitters \
+faiss-cpu \
+sentence-transformers \
+huggingface-hub \
+beautifulsoup4 \
+lxml \
+requests
 ```
 
-Isso instalará:
-- LangChain
-- FAISS
-- HuggingFace
-- Groq SDK
-- Embeddings
-- Bibliotecas auxiliares
+Depois clique no botão ▶️ para executar.
+
+A instalação pode demorar alguns minutos.
 
 ---
 
-# 🔑 6. Criando a Chave da API Groq
+# 🔑 4. Criar a Chave da API Groq
 
-O projeto utiliza modelos de IA da Groq.
+O chatbot utiliza IA da Groq.
 
 ---
 
-## Passo 1: Acesse o site oficial
+## Passo 1: Acesse
 
 https://console.groq.com/
 
 ---
 
-## Passo 2: Criar conta
+## Passo 2: Crie uma conta
 
-Você pode criar conta usando:
-
+Você pode entrar usando:
 - Google
 - GitHub
 - E-mail
 
-Clique em:
+---
 
-```text
-Sign Up
-```
+## Passo 3: Faça login
+
+Após entrar, você verá o painel da Groq.
 
 ---
 
-## Passo 3: Fazer login
-
-Após criar a conta:
-
-1. Faça login.
-2. Você será redirecionado ao painel da Groq Cloud.
-
----
-
-## Passo 4: Abrir menu de API Keys
+## Passo 4: Abrir API Keys
 
 No menu lateral esquerdo:
 
@@ -432,7 +213,7 @@ Clique nessa opção.
 
 ---
 
-## Passo 5: Criar nova chave
+## Passo 5: Criar a chave
 
 Clique em:
 
@@ -440,9 +221,7 @@ Clique em:
 Create API Key
 ```
 
-Digite um nome para sua chave.
-
-Exemplo:
+Digite um nome:
 
 ```text
 nutricao-ia-pro
@@ -458,79 +237,89 @@ Create
 
 ## Passo 6: Copiar a chave
 
-A Groq mostrará uma chave parecida com:
+A chave será parecida com:
 
 ```text
-gsk_xxxxxxxxxxxxxxxxxxxxxxxxx
+gsk_xxxxxxxxxxxxxxxxxxxxx
 ```
 
-Copie essa chave.
+Copie ela.
 
-⚠️ Importante:
-Nunca compartilhe sua chave publicamente.
+⚠️ Nunca compartilhe sua chave publicamente.
 
 ---
 
-# 🔐 7. Configurando a API no Projeto
+# 🔐 5. Configurar a API no Colab
 
-Na raiz do projeto, crie um arquivo chamado:
+Crie uma nova célula e cole:
 
-```text
-.env
+```python
+import os
+
+os.environ["GROQ_API_KEY"] = "SUA_CHAVE_AQUI"
 ```
 
-Dentro dele coloque:
+Substitua:
 
-```env
-GROQ_API_KEY=sua_chave_aqui
+```python
+SUA_CHAVE_AQUI
 ```
+
+pela sua chave real.
 
 Exemplo:
 
-```env
-GROQ_API_KEY=gsk_xxxxxxxxxxxxxxxxx
+```python
+os.environ["GROQ_API_KEY"] = "gsk_xxxxxxxxxxxxxxxxx"
 ```
+
+Execute a célula.
 
 ---
 
-# ▶️ 8. Executando o Projeto
+# 🧠 6. Colocar o Código do Projeto
 
-Agora execute:
+Crie outra célula e cole todo o código do chatbot.
 
-## Windows
-
-```bash
-python app/main.py
-```
-
----
-
-## Linux/macOS
-
-```bash
-python3 app/main.py
-```
+Depois execute.
 
 ---
 
 # ✅ Resultado Esperado
 
-Se tudo estiver funcionando corretamente, aparecerá:
+Após carregar:
 
 ```text
-======================================================================
 🥗 NUTRIÇÃO IA PRO
 Digite 'sair' para encerrar
-======================================================================
 ```
 
-Agora basta fazer perguntas normalmente no terminal.
+---
 
-Exemplo:
+# 💬 Fazendo Perguntas
+
+Digite perguntas como:
 
 ```text
 O que ajuda no emagrecimento saudável?
 ```
+
+ou
+
+```text
+Quais alimentos possuem mais fibras?
+```
+
+---
+
+# ⚠️ Observações Importantes
+
+O primeiro carregamento pode demorar porque:
+- os sites científicos são carregados;
+- os embeddings são gerados;
+- a base vetorial é criada.
+
+Isso é normal.
 
 ---
 
@@ -544,42 +333,36 @@ sair
 
 ---
 
-# ⚠️ Possíveis Erros
+# ❌ Erros Comuns
 
-## Erro: Python não encontrado
+## API Key inválida
 
-Instale o Python corretamente e reinicie o terminal.
+Verifique:
+- se copiou a chave corretamente;
+- se não deixou espaços extras;
+- se executou a célula da API antes do chatbot.
 
 ---
 
-## Erro: pip não reconhecido
+## Bibliotecas não encontradas
 
-Use:
+Execute novamente a célula:
 
-```bash
-python -m pip install -r requirements.txt
+```python
+!pip install ...
 ```
 
 ---
 
-## Erro: API Key inválida
+# 📌 Dica
 
-Verifique:
-- se a chave foi copiada corretamente;
-- se o arquivo `.env` está na raiz do projeto;
-- se não existem espaços extras.
-
+Se quiser transformar o projeto em algo mais profissional futuramente:
+- use Streamlit;
+- faça deploy;
+- adicione interface web;
+- implemente citações científicas;
+- utilize banco vetorial persistente.
 ---
-
-# 📌 Observações
-
-O primeiro carregamento pode demorar alguns segundos, pois:
-- os documentos científicos são processados;
-- os embeddings são gerados;
-- a base vetorial é criada.
-
-Após isso, o chatbot estará pronto para responder perguntas com base em evidências científicas.
---
 
 # 👨‍💻 Autor
 
